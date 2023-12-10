@@ -21,6 +21,8 @@ const Header = () => {
     return (
         <div className="main-header">
             <ul className="main-header__bars">
+                <li className="main-header__bar"></li>
+                <li></li>
                 <li className="main-header__bar">
                     <div className="main-header__bar-item">
                         <div className="main-header__bar-icon" onClick={() => setLoginModal(true)}>
@@ -37,23 +39,25 @@ const Header = () => {
                             </div>
                         )}
                     </div>
-                </li>
-                <li></li>
-                <li className="main-header__bar">
-                    <div className="main-header__bar-icon" onClick={() => setMenuShown(!menuSHown)}>
-                        <ListIcon />
+                    <div className="main-header__bar-item">
+                        <div
+                            className="main-header__bar-icon"
+                            onClick={() => setMenuShown(!menuSHown)}
+                        >
+                            <ListIcon />
+                        </div>
+                        {menuSHown && (
+                            <ul className="main-header__mob-menu">
+                                <li className="main-header__mob-menu-item">Позиция</li>
+                                <li className="main-header__mob-menu-item">Позиция</li>
+                                <li className="main-header__mob-menu-item">Позиция</li>
+                                <li className="main-header__mob-menu-item">Позиция</li>
+                                <li className="main-header__mob-menu-item">Позиция</li>
+                                <li className="main-header__mob-menu-item">Позиция</li>
+                                <li className="main-header__mob-menu-item">Позиция</li>
+                            </ul>
+                        )}
                     </div>
-                    {menuSHown && (
-                        <ul className="main-header__mob-menu">
-                            <li className="main-header__mob-menu-item">Позиция</li>
-                            <li className="main-header__mob-menu-item">Позиция</li>
-                            <li className="main-header__mob-menu-item">Позиция</li>
-                            <li className="main-header__mob-menu-item">Позиция</li>
-                            <li className="main-header__mob-menu-item">Позиция</li>
-                            <li className="main-header__mob-menu-item">Позиция</li>
-                            <li className="main-header__mob-menu-item">Позиция</li>
-                        </ul>
-                    )}
                 </li>
             </ul>
             <Modal isVisible={loginModal} content={<></>} onClose={() => setLoginModal(false)} />

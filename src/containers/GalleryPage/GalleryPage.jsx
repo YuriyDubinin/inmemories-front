@@ -184,6 +184,11 @@ const GalleryPage = () => {
         setVisible(true);
     };
 
+    const closePhoto = () => {
+        setVisible(false);
+        setActiveIndex(0);
+    };
+
     return (
         <div className="gallery-page">
             <div className="gallery-page__viewer-btn" onClick={() => setVisible(true)}>
@@ -194,7 +199,7 @@ const GalleryPage = () => {
                 {images.map((item, index) => {
                     return (
                         <li
-                            key={item.src}
+                            key={index}
                             className="gallery-page__grid-item"
                             onClick={() => showPhoto(index)}
                         >
@@ -206,7 +211,7 @@ const GalleryPage = () => {
             <Viewer
                 activeIndex={activeIndex}
                 visible={visible}
-                onClose={() => setVisible(false)}
+                onClose={() => closePhoto()}
                 images={images}
             />
         </div>

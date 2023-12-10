@@ -17,6 +17,7 @@ const MainPage = () => {
                         <div className="main-page__item-body">
                             <img src={MemoriesPlug} alt="" />
                         </div>
+
                         <div className="main-page__item-label">
                             <CloudIcon />К воспоминаниям
                         </div>
